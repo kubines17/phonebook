@@ -1,12 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import {render} from 'react-dom';
+import ExportDataSite from './components/Export-data-Site'
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default function App() {
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  return (
+    //Style all application
+    <div className="container-fluid">
+      {/*Header style*/}
+      <div className="alert-dark">
+        <h1>Phone book</h1>
+      </div>
+      {/*Request all format data*/}
+      <ExportDataSite/>
+    </div>
+  )
+}
+//sent application to html by elementId
+render(<App/>, document.getElementById('root'));
